@@ -76,11 +76,11 @@
     <ul>
   
       <li style="color:crimson;"><i class="fa fa-random" aria-hidden="true"></i></li>
-      <li><i class="fa fa-retweet" aria-hidden="true"></i></li>
+     
       <li><i class="fa fa-play" id="playpausebtn" aria-hidden="true"></i>
       </li>
       <li><i class="fa fa-user-circle" aria-hidden="true"></i></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+      <li><input type="range" id="volumeBtn" min="0" max="100" value="100"></li>
     </ul>
     <div class="footer-border"></div>
   </footer>
@@ -98,9 +98,16 @@
 
 
 <script>
-var audio;
+var audio,volumeSlider;
+  
+volumeSlider=document.getElementById("volumeBtn");
+volumeSlider.addEventListener("mousemove",volume);
 var mp3s=document.querySelectorAll("#playList li");
  var playpausebtn=document.getElementById("playpausebtn");
+  
+  function volume(){
+    audio.volume=volumeSlider.value/100;
+  
 function time(){
   var date=new Date();
 var hours=date.getHours();
