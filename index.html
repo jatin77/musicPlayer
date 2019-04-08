@@ -76,8 +76,8 @@
     <ul>
   
       <li style="color:crimson;"><i class="fa fa-random" aria-hidden="true"></i></li>
-     
-      <li><i class="fa fa-play" id="playpausebtn" aria-hidden="true"></i>
+   
+      <li><i id="playpausebtn" class="fa fa-play" aria-hidden="true"></i>
       </li>
       <li><i class="fa fa-user-circle" aria-hidden="true"></i></li>
       <li><input type="range" id="volumeBtn" min="0" max="100" value="100"></li>
@@ -98,16 +98,19 @@
 
 
 <script>
-var audio,volumeSlider;
-  
-volumeSlider=document.getElementById("volumeBtn");
-volumeSlider.addEventListener("mousemove",volume);
+var audio,volumeBtn;
+
+
+volumeBtn=document.getElementById("volumeBtn");
+volumeBtn.addEventListener("mousemove",volume);
 var mp3s=document.querySelectorAll("#playList li");
- var playpausebtn=document.getElementById("playpausebtn");
-  
-  function volume(){
-    audio.volume=volumeSlider.value/100;
-  };
+var playpausebtn=document.getElementById("playpausebtn");
+playpausebtn.addEventListener("click",playpause);
+
+function volume(){
+  audio.volume=volumeBtn.value/100;
+}
+
 function time(){
   var date=new Date();
 var hours=date.getHours();
@@ -133,6 +136,7 @@ function play(e){
   var nameArr=[
     "Wiz Khalifa","Martin Garrix","Space Buddha"
     ];
+   
   var mainImg=document.querySelector(".main-img img");
   var mainArtistMp3=document.querySelector(".main-artist-mp3");
   var mainDetail=document.querySelectorAll(".li-mp3-detail");
@@ -146,31 +150,28 @@ function play(e){
   var mp3fa=this.querySelector(".li-play-btn");
  
   audio=document.querySelector(`audio[data-key="${mp3Key}"]`);
- 
+
+
   
   if(mp3Key==audio.dataset.key){
-    audio.currentTime=0;
+    audio.currentTime=0;   
     var child=mp3File.children;
     num=mp3Key-1;
     mainImg.setAttribute("src",`${imgArr[num]}`)
     mainName.innerHTML=nameArr[num]
     var text=mainDetail[num].textContent;
     mainArtistMp3.innerHTML=text;
-    console.log(text);
-     
-   audio.play();
+    console.log(text)
+    audio.play();
   }else{
-    
+  
     return;
   }
 
   
   
 }
-
-
- playpausebtn.addEventListener("click",playpause);
-     function playpause(){
+function playpause(){
     if(audio.paused){
       audio.play();
       playpausebtn.style.color="crimson";
@@ -181,6 +182,8 @@ function play(e){
       playpausebtn.style.color="white";
     }
   }
+  
+
 
 
 
