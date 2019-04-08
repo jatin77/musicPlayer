@@ -43,7 +43,7 @@
       <h4>Most Popular Songs</h4>
     </div>
     <ul>
-      <li data-key="1">
+      <li data-key="0">
         <span class="digit">01</span>
         <span class="album-art">
           <img src="wizKhalifa.jpg" alt="">
@@ -51,7 +51,7 @@
         <span class="li-mp3-Name">Wiz Khalifa<br><span class="li-mp3-detail">Wiz Khalifa - Amber Ice</span></span>
         <span class="li-play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
       </li>
-      <li data-key="2">
+      <li data-key="1">
           <span class="digit">02</span>
           <span class="album-art">
             <img src="martinG.jpg" alt="">
@@ -59,7 +59,7 @@
           <span class="li-mp3-Name">Martin Garrix<br><span class="li-mp3-detail">ft. Tiesto Only Way Is Up</span></span>
           <span class="li-play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
         </li>
-        <li data-key="3">
+        <li data-key="2">
             <span class="digit">03</span>
             <span class="album-art">
               <img src="spaceBuddha.jpg" alt="">
@@ -89,9 +89,9 @@
 </section>
 
 
-<audio data-key="1" src="01-Wiz Khalifa - Amber Ice [Prod. By I.D. Labs Productions] [www.SongsLover.com].mp3"></audio>
-<audio data-key="2" src="Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3"></audio>
-<audio data-key="3" src="Space Buddha - Self Therapy.mp3"></audio>
+<audio src=""></audio>
+<!-- <audio data-key="2" src="Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3"></audio>
+<audio data-key="3" src="Space Buddha - Self Therapy.mp3"></audio> -->
 
 
 
@@ -134,7 +134,11 @@ function play(e){
   var nameArr=[
     "Wiz Khalifa","Martin Garrix","Space Buddha"
     ];
-   
+  var mp3Arr=[
+    "01-Wiz Khalifa - Amber Ice [Prod. By I.D. Labs Productions] [www.SongsLover.com].mp3",
+    "Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3",
+    "Space Buddha - Self Therapy.mp3"
+    ]
   var mainImg=document.querySelector(".main-img img");
   var mainArtistMp3=document.querySelector(".main-artist-mp3");
   var mainDetail=document.querySelectorAll(".li-mp3-detail");
@@ -146,25 +150,23 @@ function play(e){
   var mp3detail=this.querySelector(".li-mp3-detail");
   var mp3digit=this.querySelector(".digit");
   var mp3fa=this.querySelector(".li-play-btn");
- 
-  audio=document.querySelector(`audio[data-key="${mp3Key}"]`);
+  var mp3play=mp3Arr[`${mp3Key}`];
+  audio=document.querySelector(audio);
+  audio.setAttribute("src",mp3play);
 
 
   
-  if(mp3Key==audio.dataset.key){
+ 
     audio.currentTime=0;   
     var child=mp3File.children;
-    num=mp3Key-1;
+    num=mp3Key;
     mainImg.setAttribute("src",`${imgArr[num]}`)
     mainName.innerHTML=nameArr[num]
     var text=mainDetail[num].textContent;
     mainArtistMp3.innerHTML=text;
     console.log(text)
     audio.play();
-  }else{
-  
-    return;
-  }
+
 
 function volume(){
   audio.volume=volumeBtn.value/100;
