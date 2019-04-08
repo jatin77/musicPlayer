@@ -107,9 +107,7 @@ var mp3s=document.querySelectorAll("#playList li");
 var playpausebtn=document.getElementById("playpausebtn");
 playpausebtn.addEventListener("click",playpause);
 
-function volume(){
-  audio.volume=volumeBtn.value/100;
-}
+
 
 function time(){
   var date=new Date();
@@ -168,7 +166,9 @@ function play(e){
     return;
   }
 
-  
+function volume(){
+  audio.volume=volumeBtn.value/100;
+}  
   
 }
 function playpause(){
