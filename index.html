@@ -89,16 +89,16 @@
 </section>
 
 
-<audio src=""></audio>
+<audio  src=""></audio>
 <!-- <audio data-key="2" src="Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3"></audio>
-<audio data-key="3" src="Space Buddha - Self Therapy.mp3"></audio> -->
-
+<audio data-key="3" src="Space Buddha - Self Therapy.mp3"></audio>
+ -->
 
 
 
 
 <script>
-var audio,volumeBtn;
+var audio,volumeBtn,volume;
 
 
 volumeBtn=document.getElementById("volumeBtn");
@@ -107,7 +107,10 @@ var mp3s=document.querySelectorAll("#playList li");
 var playpausebtn=document.getElementById("playpausebtn");
 playpausebtn.addEventListener("click",playpause);
 
-
+function volume(){
+  audio.volume=volumeBtn.value/100;
+      console.log("A")
+}
 
 function time(){
   var date=new Date();
@@ -134,11 +137,11 @@ function play(e){
   var nameArr=[
     "Wiz Khalifa","Martin Garrix","Space Buddha"
     ];
-  var mp3Arr=[
-    "01-Wiz Khalifa - Amber Ice [Prod. By I.D. Labs Productions] [www.SongsLover.com].mp3",
-    "Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3",
-    "Space Buddha - Self Therapy.mp3"
-    ]
+   var mp3Arr=[
+     "01-Wiz Khalifa - Amber Ice [Prod. By I.D. Labs Productions] [www.SongsLover.com].mp3",
+     "Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3",
+     "Space Buddha - Self Therapy.mp3"
+     ];
   var mainImg=document.querySelector(".main-img img");
   var mainArtistMp3=document.querySelector(".main-artist-mp3");
   var mainDetail=document.querySelectorAll(".li-mp3-detail");
@@ -150,13 +153,12 @@ function play(e){
   var mp3detail=this.querySelector(".li-mp3-detail");
   var mp3digit=this.querySelector(".digit");
   var mp3fa=this.querySelector(".li-play-btn");
-  var mp3play=mp3Arr[`${mp3Key}`];
-  audio=document.querySelector(audio);
-  audio.setAttribute("src",mp3play);
-
-
-  
  
+  audio=document.querySelector("audio");;
+  console.log(audio);
+  audioSrc=mp3Arr[`${mp3Key}`];
+  audio.setAttribute("src",audioSrc);
+
     audio.currentTime=0;   
     var child=mp3File.children;
     num=mp3Key;
@@ -167,11 +169,8 @@ function play(e){
     console.log(text)
     audio.play();
 
+ 
 
-function volume(){
-  audio.volume=volumeBtn.value/100;
-}  
-  
 }
 function playpause(){
     if(audio.paused){
