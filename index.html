@@ -98,9 +98,9 @@
 
 
 <script>
-
+var audio;
 var mp3s=document.querySelectorAll("#playList li");
-
+ var playpausebtn=document.getElementById("playpausebtn");
 function time(){
   var date=new Date();
 var hours=date.getHours();
@@ -137,8 +137,8 @@ function play(e){
   var mp3detail=this.querySelector(".li-mp3-detail");
   var mp3digit=this.querySelector(".digit");
   var mp3fa=this.querySelector(".li-play-btn");
-  var playpausebtn=document.getElementById("playpausebtn");
-  var audio=document.querySelector(`audio[data-key="${mp3Key}"]`);
+ 
+  audio=document.querySelector(`audio[data-key="${mp3Key}"]`);
  
   
   if(mp3Key==audio.dataset.key){
@@ -150,19 +150,7 @@ function play(e){
     var text=mainDetail[num].textContent;
     mainArtistMp3.innerHTML=text;
     console.log(text);
-      playpausebtn.addEventListener("click",playpause);
-     function playpause(){
-    if(audio.paused){
-      audio.play();
-      playpausebtn.style.color="crimson";
-      console.log("play")
-    }else{
-      audio.pause();
-      console.log("paused")
-      playpausebtn.style.color="white";
-    }
-  }
-
+     
    audio.play();
   }else{
     
@@ -174,6 +162,18 @@ function play(e){
 }
 
 
+ playpausebtn.addEventListener("click",playpause);
+     function playpause(){
+    if(audio.paused){
+      audio.play();
+      playpausebtn.style.color="crimson";
+      console.log("play")
+    }else{
+      audio.pause();
+      console.log("paused")
+      playpausebtn.style.color="white";
+    }
+  }
 
 
 
