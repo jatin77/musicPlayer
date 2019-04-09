@@ -3,7 +3,7 @@ body{
   margin:0;
   font-family:comic sans ms;
   background: var(--bg-color);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 *{
   box-sizing: border-box;
@@ -91,22 +91,27 @@ nav .lead-text h4{
   padding-bottom: 10px !important;
 }
 nav ul li span:nth-child(3){
-  width:600px;
+  /* width:600px; */
 }
 nav ul li{
-  display: flex;
+  display: grid;
+  grid-template-columns: 7% 15% auto auto;
   width:95%;
   margin:0 auto;
   height:50px;
   padding: 14px 0;
   border-bottom:1px solid var(--light-dark);
   box-sizing: initial;
-
+  cursor:pointer;
+  
 }
 nav ul li .digit{
   color:var(--light-dark);
   line-height: 50px;
   padding-right:15px;
+}
+nav ul li.album-art{
+  justify-self: start;
 }
 nav ul li .album-art img{
   width:60px;
@@ -122,9 +127,10 @@ nav ul li .li-mp3-detail{
 nav ul li .li-play-btn{
  line-height:50px;
   color:#f8f8ff;
-  width:100%;
   color: var(--light-dark);
-  text-align: right;
+  justify-self: end;
+  
+
 }
 /*-----------------FOOTER--------------------*/
 footer{
@@ -308,7 +314,7 @@ footer .footer-border{
      
   }
   nav ul li span:nth-child(3){
-    width:400px;
+    /* width:400px; */
   }
   nav .lead-text{
     color: var(--brightWhite);
@@ -319,7 +325,8 @@ footer .footer-border{
     font-size:14px;
   }
   nav ul li{
-    display: flex;
+    display: grid;
+    grid-template-columns: 7% 15% auto auto;
     width:95%;
     margin:0 auto;
     height:30px;
@@ -350,7 +357,7 @@ footer .footer-border{
   nav ul li .li-play-btn{
    line-height:40px;
     color:#f8f8ff;
-    width:100%;
+    
     color: var(--light-dark);
     text-align: right;
   }
