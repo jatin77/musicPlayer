@@ -20,7 +20,7 @@
 
   <header>
     <span id="time"><span id="hr">9</span>:<span id="min">23</span></span>
-    <span id="notification"><i class="fa fa-signal" aria-hidden="true"></i><i class="fa fa-wifi" aria-hidden="true"></i><i class="fa fa-battery-full" aria-hidden="true"></i></span>
+    <span id="notification"><i class="fa fa-signal" aria-hidden="true"></i><i class="fa fa-wifi" aria-hidden="true"></i><i id="battery" class="fa" aria-hidden="true"></i></span>
   </header>
   <!------------------MAIN--------------->
   <main>
@@ -188,8 +188,29 @@ function playpause(){
     }
   }
   
+//Battery
 
+function batteryCharge(){
+  const battery=document.getElementById("battery");
+  battery.innerHTML="&#xf244;";
 
+  setTimeout(function(){
+    battery.innerHTML="&#xf243;";
+  },2000);
+  setTimeout(function(){
+    battery.innerHTML="&#xf242;"
+  },4000);
+  setTimeout(function(){
+    battery.innerHTML="&#xf241;";
+  },6000);
+  setTimeout(function(){
+    battery.innerHTML="&#xf240;";
+  },8000)
+}
+
+batteryCharge()
+
+setInterval(batteryCharge,10000)
 
 
 </script>
