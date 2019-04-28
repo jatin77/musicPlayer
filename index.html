@@ -1,218 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Music Player</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <title>Music App</title>
 </head>
+
 <body>
- 
-<section>
+  <!----------------Sign in---------------->
+  <section class="sign-in">
+    <!---------------header------------>
+    <header>
+      <!----------notification----------->
+      <div class="notification">
+        <div class="notification-time">09:41</div>
+        <div class="notification-specs">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class=" battery"></i>
+        </div>
+      </div>
+      <!-------------notification end---------->
+    </header>
+    <!--------------header end-------------->
+    <!--------------------main-------------->
+    <main>
+      <h1>Sign In</h1>
+      <p><small>Sign in with your email or user name.Dont't remember your user name or password <br>
+          <span>
+            <b>Click
+              here</span></b></small></p>
+      <form class="sign-in-form">
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+        <div class="form-options">
+          <div class="form-options-rememberMe">
+            <input type="checkbox">
+            <span><small>Remember me
+              </small>
+            </span>
+          </div>
 
-  <!----------------HEADER-------------->
+          <a class="form-options-login" href="#">LOGIN</a>
 
-  <header>
-    <span id="time"><span id="hr">9</span>:<span id="min">23</span></span>
-    <span id="notification"><i class="fa fa-signal" aria-hidden="true"></i><i class="fa fa-wifi" aria-hidden="true"></i><i id="battery" class="fa" aria-hidden="true"></i></span>
-  </header>
-  <!------------------MAIN--------------->
-  <main>
-    <div class="main-img">
-      <img src="wizKhalifa.jpg" alt="">
-    </div>
-    <div class="main-artist-name">
-      <h1>Wiz Khalifa</h1>
-    </div>
-    <div class="main-artist-mp3">
-      <p>Wiz Khalifa - Amber Ice</p>
-    </div>
-    <div class="main-playlist">
+        </div>
+      </form>
+      <div class="or-border">
+        <p>OR</p>
+      </div>
+      <div class="facebookLogin">
+        <p>login with facebook</p>
+      </div>
+    </main>
+    <!------------------main end-------------->
+    <!------------------footer---------------->
+    <footer>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A sunt eaque quibusdam, cum at est quos iure totam in
+        corporis necessitatibus laborum, explicabo quod nam quia <span>vel delectus atque quasi!</span></p>
+      <div class="bottom-border"></div>
+    </footer>
+    <!----------------footer end------------>
+  </section>
+  <!----------------Sign in end---------------->
+  <!--------------playlist---------------->
+  <section class="playlist">
+    <header>
+      <!----------notification----------->
+      <div class="notification">
+        <div class="notification-time">09:41</div>
+        <div class="notification-specs">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="battery"></i>
+        </div>
+      </div>
+      <!-------------notification end---------->
+      <!-----------Artist head--------->
+      <div class="artist-main-head">
+        <img class="artist-main-head-img" src="wizKhalifa.jpg" alt="">
+        <h1 class="artist-main-head-name">Wiz Khalifa</h1>
+        <p class="artist-main-head-song">Wiz Khalifa - Amber Ice</p>
+      </div>
+      <!---------------artist head end-------->
+    </header>
+
+    <div class="playlist-box">
       <p>Playlist</p>
     </div>
-  </main>
-  <!----------------PLAY_LIST------------------->
-  <nav id="playList">
-    <div class="lead-text">
+    <!----------------------music list box------------>
+    <div class="music-list-box">
       <h4>Most Popular Songs</h4>
-    </div>
-    <ul>
-      <li data-key="0">
-        <span class="digit">01</span>
-        <span class="album-art">
-          <div><img src="wizKhalifa.jpg" alt=""></div>
-        </span>
-        <span class="li-mp3-Name">Wiz Khalifa<br><span class="li-mp3-detail">Wiz Khalifa - Amber Ice</span></span>
-        <span class="li-play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
-      </li>
-      <li data-key="1">
-          <span class="digit">02</span>
-          <span class="album-art">
-            <img src="martinG.jpg" alt="">
-          </span>
-          <span class="li-mp3-Name">Martin Garrix<br><span class="li-mp3-detail">ft. Tiesto Only Way Is Up</span></span>
-          <span class="li-play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
+      <ul class="playlist-songs">
+        <!---------------------song----------->
+        <li id="0" class="song-listing">
+          <div class="song-number">01</div>
+          <div class="song-img">
+            <img src="wizKhalifa.jpg" alt="">
+          </div>
+          <div class="song-detail">
+            <div class="song-detail-name">Wiz khalifa</div>
+            <div class="song-detail-artist"><small>Wiz Kahlifa - amber ice</small></div>
+          </div>
+
         </li>
-        <li data-key="2">
-            <span class="digit">03</span>
-            <span class="album-art">
-              <img src="spaceBuddha.jpg" alt="">
-            </span>
-            <span class="li-mp3-Name">Space Buddha<br><span class="li-mp3-detail">Self Therapy</span></span>
-            <span class="li-play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
-          </li>
-    </ul>
-  </nav>
+        <!---------------------song end---------------->
+        <!---------------------song---------------->
+        <li id="1" class="song-listing">
+          <div class="song-number">02</div>
+          <div class="song-img">
+            <img src="martinG.jpg" alt="">
+          </div>
+          <div class="song-detail">
+            <div class="song-detail-name">Martin garrix</div>
+            <div class="song-detail-artist"><small>ft. tiesto only way is up</small></div>
+          </div>
 
-  <!---------------------FOOTER----------------->
+        </li>
 
-  <footer>
-    <ul>
-  
-      <li style="color:crimson;"><i class="fa fa-random" aria-hidden="true"></i></li>
-   
-      <li id="playpausebtn"><i  class="fa fa-play" aria-hidden="true"></i>
-      </li>
-      <li><i class="fa fa-user-circle" aria-hidden="true"></i></li>
-      <li><input type="range" id="volumeBtn" min="0" max="100" value="100"></li>
-    </ul>
-    <div class="footer-border"></div>
-  </footer>
+        <!---------------------song---------------->
+        <li id="2" class="song-listing">
+          <div class="song-number">03</div>
+          <div class="song-img">
+            <img src="spaceBuddha.jpg" alt="">
+          </div>
+          <div class="song-detail">
+            <div class="song-detail-name">Space budhha</div>
+            <div class="song-detail-artist"><small>Self therapy</small></div>
+          </div>
 
-
-</section>
-
-
-<audio  src=""></audio>
-<!-- <audio data-key="2" src="Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3"></audio>
-<audio data-key="3" src="Space Buddha - Self Therapy.mp3"></audio>
- -->
-
-
-
-
-<script>
-var audio,volumeBtn,volume;
-
-
-volumeBtn=document.getElementById("volumeBtn");
-volumeBtn.addEventListener("mousemove",volume);
-var mp3s=document.querySelectorAll("#playList li");
-var playpausebtn=document.getElementById("playpausebtn");
-playpausebtn.addEventListener("click",playpause);
-
-function volume(){
-  audio.volume=volumeBtn.value/100;
-      console.log("A")
-}
-
-//TIME
-function time(){
-  var date=new Date();
-var hours=date.getHours();
-var min=date.getMinutes();
-var mn=document.getElementById("min");
-var hr=document.getElementById("hr");
-hr.innerHTML=hours;
-mn.innerHTML=min;
-
-}
-setInterval(time,1000);
-
-
-mp3s.forEach(function(li){
-   li.addEventListener("click",play);
-  
-})    
-
-function play(e){
-  //ARRAY
-  var imgArr=[
-    "wizKhalifa.jpg","martinG.jpg","spaceBuddha.jpg"
-    ];
-  var nameArr=[
-    "Wiz Khalifa","Martin Garrix","Space Buddha"
-    ];
-   var mp3Arr=[
-     "01-Wiz Khalifa - Amber Ice [Prod. By I.D. Labs Productions] [www.SongsLover.com].mp3",
-     "Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3",
-     "Space Buddha - Self Therapy.mp3"
-     ];
-  var mainImg=document.querySelector(".main-img img");
-  var mainArtistMp3=document.querySelector(".main-artist-mp3");
-  var mainDetail=document.querySelectorAll(".li-mp3-detail");
-  var mainName=document.querySelector(".main-artist-name h1");
-  var num=0;
-  var mp3Key=this.dataset.key;
-  var mp3File=this;
-  console.log(mp3File)
-  var mp3detail=this.querySelector(".li-mp3-detail");
-  var mp3digit=this.querySelector(".digit");
-  var mp3fa=this.querySelector(".li-play-btn");
- 
-  audio=document.querySelector("audio");;
-  console.log(audio);
-  audioSrc=mp3Arr[`${mp3Key}`];
-  audio.setAttribute("src",audioSrc);
-
-    audio.currentTime=0;   
-    var child=mp3File.children;
-    num=mp3Key;
-    mainImg.setAttribute("src",`${imgArr[num]}`)
-    mainName.innerHTML=nameArr[num]
-    var text=mainDetail[num].textContent;
-    mainArtistMp3.innerHTML=text;
-    playpausebtn.innerHTML=`<i class="fa fa-pause" aria-hidden="true"></i>`;
-      console.log("play")
-    console.log(text)
-    audio.play();
-
- 
-
-}
-function playpause(){
-    if(audio.paused){
-      audio.play();
-      playpausebtn.innerHTML=`<i class="fa fa-pause" aria-hidden="true"></i>`;
-      console.log("play")
-    }else{
-      audio.pause();
-      console.log("paused")
-      playpausebtn.innerHTML=`<i  class="fa fa-play" aria-hidden="true"></i>`;
-    }
-  }
-  
-//Battery
-
-function batteryCharge(){
-  const battery=document.getElementById("battery");
-  battery.innerHTML="&#xf244;";
-
-  setTimeout(function(){
-    battery.innerHTML="&#xf243;";
-  },2000);
-  setTimeout(function(){
-    battery.innerHTML="&#xf242;"
-  },4000);
-  setTimeout(function(){
-    battery.innerHTML="&#xf241;";
-  },6000);
-  setTimeout(function(){
-    battery.innerHTML="&#xf240;";
-  },8000)
-}
-
-batteryCharge()
-
-setInterval(batteryCharge,10000)
-
-
-</script>
+        </li>
+        <!---------------------song end---------------->
+      </ul>
+    </div>
+    <!---------------------playlist buttons----------------->
+    <footer>
+      <i class="fas fa-random"></i>
+      <i class="fas fa-play playPauseBtn"></i>
+      <i class="fas fa-user"></i>
+      <i class="fas fa-volume-up volume"></i>
+    </footer>
+    <!----------------------------playlist buttons end------------->
+  </section>
+  <audio src="" id="audio"></audio>
+  <!--------------playlist-end--------------->
+  <script src="app.js"></script>
 </body>
+
 </html>
