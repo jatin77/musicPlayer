@@ -55,7 +55,7 @@ body {
   margin: 0 auto;
   grid-template-rows: 1fr 4fr 1fr;
   height: 100vh;
-  display: none;
+  /* display: none; */
 }
 
 /*sign in header*/
@@ -325,6 +325,7 @@ footer .bottom-border {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 18px 0;
   justify-items: center;
+  display: none;
 }
 
 .playlist footer i {
