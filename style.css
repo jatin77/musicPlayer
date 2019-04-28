@@ -202,7 +202,7 @@ footer .bottom-border {
 .playlist {
   display: grid;
   flex-direction: column;
-  /* display: none; */
+  display: none;
   grid-template-rows: auto auto 2fr auto;
   height: 100vh;
 }
@@ -325,7 +325,7 @@ footer .bottom-border {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 18px 0;
   justify-items: center;
-  display: none;
+ 
 }
 
 .playlist footer i {
