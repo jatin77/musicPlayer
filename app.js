@@ -34,31 +34,34 @@ function showPlaylistPage() {
 function formSubmit(e) {
   e.preventDefault();
   //get username value
-  username.value;
-  password.value;
-  checkFormValues(username, password);
+  checkFormValues(username.value, password.value);
 
 }
 //function to check form input
 function checkFormValues(name, password) {
   if (name == "" && password == "") {
+    let password = _selector("#password");
+    let username = _selector("#username");
     username.style.border = "3px solid crimson";
     password.style.border = "3px solid crimson";
     return;
   } else if (name == "" || name.length < 6) {
-
+    let password = _selector("#password");
+    let username = _selector("#username");
     username.style.border = "3px solid crimson"
 
     return;
 
   } else if (password == "" || password.length < 6) {
+    let password = _selector("#password");
+    let username = _selector("#username");
     password.style.border = "3px solid crimson"
     return;
   } else {
     signInPage.style.display = "none";
     userPage.style.display = "grid";
     //show user name in welcome page
-    welcomeName.innerHTML = name.value;
+    welcomeName.innerHTML = name;
 
   }
 
