@@ -14,7 +14,6 @@ input {
   background: var(--inputBgColor);
   font-family: 'Fira Sans Condensed', sans-serif;
   color: var(--brightWhiteColor);
-
 }
 
 input::placeholder {
@@ -61,7 +60,6 @@ body {
 /*sign in header*/
 .sign-in header {
   color: var(--brightWhiteColor);
-
 }
 
 .sign-in header .notification {
@@ -84,7 +82,6 @@ body {
 
 .sign-in main span {
   color: var(--redMainColor);
-
 }
 
 .sign-in form {
@@ -104,15 +101,12 @@ body {
   grid-template-columns: auto auto;
   margin-top: 13px;
   align-items: center;
-
-
 }
 
 .sign-in form .form-options-rememberMe {
   display: grid;
   grid-template-columns: 30px auto;
   align-items: center;
-
 }
 
 .sign-in form .form-options-rememberMe span {
@@ -164,7 +158,6 @@ body {
 
 .sign-in .facebookLogin p {
   line-height: 40px;
-
 }
 
 .sign-in .facebookLogin p {
@@ -184,7 +177,6 @@ footer p {
 
 footer p span {
   color: var(--redMainColor);
-
 }
 
 footer .bottom-border {
@@ -203,7 +195,7 @@ footer .bottom-border {
   display: grid;
   flex-direction: column;
   display: none;
-  grid-template-rows: auto auto 2fr auto;
+  grid-template-rows: auto auto 2fr auto auto;
   height: 100vh;
 }
 
@@ -212,7 +204,6 @@ footer .bottom-border {
   color: var(--brightWhiteColor);
   width: 95%;
   margin: 0 auto;
-
 }
 
 .playlist header .notification {
@@ -239,7 +230,6 @@ footer .bottom-border {
 
 .playlist .artist-main-head-name {
   margin-top: 15px;
-
 }
 
 .playlist .artist-main-head-name {
@@ -276,7 +266,6 @@ footer .bottom-border {
 .music-list-box h4 {
   color: var(--brightWhiteColor);
   margin: 10px 0 20px 0;
-
 }
 
 .playlist-songs {
@@ -299,7 +288,6 @@ footer .bottom-border {
 
 .song-detail-name {
   color: var(--brightWhiteColor);
-
 }
 
 .song-detail {
@@ -317,15 +305,27 @@ footer .bottom-border {
 }
 
 /*playlist songs end/
+/*timers*/
+.song-length {
+  background: var(--darkshade1);
+  padding-top: 5px;
+}
+.song-length .timers {
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--inputBgColor);
+}
+/*timers end*/
 /*playlist footer*/
 .playlist footer {
   background: var(--darkshade1);
   color: var(--inputBgColor);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 18px 0;
+  padding: 10px 0 18px 0;
   justify-items: center;
-
 }
 
 .playlist footer i {
@@ -334,9 +334,66 @@ footer .bottom-border {
 
 /*playlist footer end*/
 /*-=====---------------Playlist end------------*/
+/*--------------------User-----------------*/
+/*sign in header*/
+.user {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('beautiful-beauty-black-and-white-1022166.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
 
-/*dynamic classes*/
-
-.showGrid {
   display: grid;
+  display: none;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+.user header {
+  color: var(--brightWhiteColor);
+  margin: 0 auto;
+  width: 95%;
+}
+
+.user header .notification {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 20px 0;
+}
+.user .welcome-text {
+  margin: 0 auto;
+  width: 95%;
+}
+.user .welcome-text h1 {
+  color: var(--brightWhiteColor);
+  font-size: 4em;
+  margin-bottom: 30px;
+}
+.user .welcome-text p {
+  color: var(--lightWhiteColor);
+}
+.user footer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  align-items: end;
+  justify-items: center;
+}
+.user footer a {
+  color: var(--brightWhiteColor);
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  line-height: 40px;
+  text-align: center;
+
+  background: var(--redMainColor);
+  cursor: pointer;
+}
+/*sign in header end*/
+/*--------------------User end-----------------*/
+@media (max-height: 500px) {
+  .user .welcome-text h1 {
+    font-size: 3em;
+  }
 }
