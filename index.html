@@ -99,7 +99,7 @@
         <li id="0" class="song-listing">
           <div class="song-number">01</div>
           <div class="song-img">
-            <img src="wizKhalifa.jpg" alt="">
+            <img src="wizKhalifa.jpg" class="mp3-img" alt="">
           </div>
           <div class="song-detail">
             <div class="song-detail-name">Wiz khalifa</div>
@@ -137,15 +137,49 @@
       </ul>
     </div>
     <!---------------------playlist buttons----------------->
+    <section class="song-length">
+      <div class="timers">
+        <div class="currentTime">00:00</div>
+        <div class="duration">00:00</div>
+      </div>
+    </section>
     <footer>
-      <i class="fas fa-random"></i>
+      <i class="fas fa-random shuffle"></i>
       <i class="fas fa-play playPauseBtn"></i>
-      <i class="fas fa-user"></i>
+      <i class="fas fa-user userBtn"></i>
       <i class="fas fa-volume-up volume"></i>
     </footer>
     <!----------------------------playlist buttons end------------->
   </section>
+  <!-------------------user page------------------>
+  <section class="user">
+    <header>
+      <!----------notification----------->
+      <div class="notification">
+        <div class="notification-time">09:41</div>
+        <div class="notification-specs">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="battery"></i>
+        </div>
+      </div>
+      <!-------------notification end---------->
+    </header>
+    <div class="welcome-text">
+      <h1>Welcome on our music platform <span class="welcome-name">Tom</span></h1>
+      <p>Tell us what music are you into and we'll find stuff thst's right for you!</p>
+    </div>
+    <footer>
+      <a href="#" class="showPlaylist">Your Playlist</a>
+      <div class="bottom-border">
+
+      </div>
+    </footer>
+  </section>
+  <!-------------------user page end------------------>
+  <!---------audio -->
   <audio src="" id="audio"></audio>
+  <!-------------audio end------->
   <!--------------playlist-end--------------->
   <script src="app.js"></script>
 </body>
